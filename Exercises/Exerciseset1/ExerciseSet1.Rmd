@@ -3,6 +3,7 @@
 title: "Exercise Set 1"
 author: "T. Evgeniou"
 output: html_document
+runtime: shiny
 ---
 
 
@@ -88,10 +89,19 @@ pnl_plot(SPY)
 
 **Your Answers here:**
 <br>
+1 - mytickers = c("SPY", "AAPL")
 <br>
 <br>
+2 - 
+  >round(100*sum(StockReturns[,2]),1)
+[1] 596.5
 <br>
-
+   >round(100*mean(StockReturns[,2]),3)
+[1] 0.148
+<br>
+    >round(100*sd(StockReturns[,2]),3)
+[1] 2.39
+<br>
 <hr>
 <hr>
 
@@ -130,9 +140,16 @@ We can also transpose the matrix of returns to create a new "horizontal" matrix.
 **Your Answers here:**
 <br>
 <br>
+1)
+ >dim(t(StockReturns))
+  [1]    2 4030
+  2 Rows and 4030 Columns
 <br>
+2)
 <br>
-
+  >portfolio = apply(StockReturns,1,mean)
+  >names(portfolio) <- rownames(StockReturns)
+  >pnl_plot(portfolio)
 <hr>
 <hr>
 
@@ -148,9 +165,13 @@ This is an important step and will get you to think about the overall process on
 **Your Answers here:**
 <br>
 <br>
+1) startdate in DataSet1.R should be startDate = "2001-01-01" which it already is.
 <br>
+2) change in DataSet1.R mytickers = c("SPY", "AAPL") to mytickers = c("SPY", "AAPL","GOOG","TSLA")
 <br>
-
+portfolio2 = apply(StockReturns,1,mean)
+names(portfolio2) <- rownames(StockReturns)
+pnl_plot(portfolio2)
 <hr>
 <hr>
 
@@ -181,10 +202,10 @@ myData + StockReturns[1:40,]
 
 **Your Answers here:**
 <br>
+1 - sum(myData != StockReturns[1:20,]) = 20
 <br>
+2 - you get an error becasue you are adding a vector (stockreturn) with a list (mydata) 
 <br>
-<br>
-
 <hr>
 <hr>
 
@@ -192,13 +213,13 @@ myData + StockReturns[1:40,]
 
 Can you now load another dataset from some CSV file and report some basic statistics about that data? 
 
-<br>
+<br> yes
 
 ### Creating Interactive Documents
 
 Finally, just for fun, one can add some interactivity in the report using [Shiny](http://rmarkdown.rstudio.com/authoring_shiny.html).All one needs to do is set the eval flag of the code chunk below (see the .Rmd file) to "TRUE", add the line "runtime: shiny" at the very begining of the .Rmd file, make the markdown output to be "html_document", and then press "Run Document". 
 
-```{r, eval=FALSE, echo = TRUE}
+```{r, eval=TRUE, echo = TRUE}
 sliderInput("startdate", "Starting Date:", min = 1, max = length(portfolio), 
             value = 1)
 sliderInput("enddate", "End Date:", min = 1, max = length(portfolio), 
