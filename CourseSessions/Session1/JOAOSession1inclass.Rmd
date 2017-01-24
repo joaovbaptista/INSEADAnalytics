@@ -150,10 +150,12 @@ The correlation matrix does not look pretty for now, but we will see example way
 
 **Your Answers here:**
 <br>
+1. The answer is Q1_3_The.brand.of.boat.I.buy.says.a.lot.about.who.I.am
 <br>
+2. The answer is 'r mean(ProjectData[,4])'
 <br>
+3. The answer is 'r 100*sum(ProjectData[,48] ==1)/nrow(ProjectData)'%
 <br>
-
 <hr>
 <hr>
 
