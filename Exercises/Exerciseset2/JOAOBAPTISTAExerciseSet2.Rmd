@@ -161,7 +161,7 @@ iprint.df(show_data, scale=TRUE)
 
 *1. 6 components will explain 52.29% of the variance; i.e. you You need a minimum of 6 components 
 <br>
-*2. 5 yr T-Notes US (0.93); 10yr T-Notes (0.93); Treasury Bonds (0.86); 2 yr T-Note US (0.85); Canadian Bond (0.79)
+*2. 5 yr T-Notes US (0.93)
 <br>
 *3.The first 10 components explain 62.61% of the variance and can be called principal components: 
 <br>*Factor 1 Government bonds
@@ -238,15 +238,11 @@ How does this compare with **existing CTA products** such as [this one from Soci
 
 **Answers**
 
-*
-*
-*
-*
-*
-*
-*
-*
-*
+*1. The code is varied by "MAfreq" which sequences in intervals of 20 from 10 to 250. <br>
+The weight of each signal is calculated, by scaling the sum across all the futures, so that the total sum is 1. Then it uses the signal previously calculated to generate a following strategy using the weights we calculated 2 days ago to the futures.
+<br>
+*2. The command line MAfreq<-seq(10,250,by=20), alters how often the trading strategy is implemented.By changing it we achieve the follwoing portfolio return Ret:5.7, Vol:7.7, Sharpe:0.74, DD: 21.9 
+*<br>
 *
 
 # A class competition
