@@ -159,15 +159,21 @@ iprint.df(show_data, scale=TRUE)
 
 **Answers**
 
-*
-*
-*
-*
-*
-*
-*
-*
-*
+*1. 6 components will explain 52.29% of the variance; i.e. you You need a minimum of 6 components 
+*2. 5 yr T-Notes US (0.93); 10yr T-Notes (0.93); Treasury Bonds (0.86); 2 yr T-Note US (0.85); Canadian Bond (0.79)
+*3.The first 10 components explain 62.61% of the variance and can be called principal components: 
+*Factor 1 Government bonds
+*Factor 2 FX 
+*Factor 3 EU - stock indices 
+*Factor 4 North-Amercican - stock indices
+*Factor 5 Euro-bonds and IR 
+*Factor 6 Oil
+*Factor 7 Metals
+*Factor 8 Foods
+*Factor 9 Gold & Sliver
+*Factor 10 Asian Stock Indices
+*4. See comments on charts below.
+*5.In the bull market more components influence the market as there are more occurences before the elbow of the chart. You can see for example that component 1 is less significant compared with the average over all the years. *In the bear market a) with the  first 4 factors we can explain  50% of the variance b) The correlation between futures increased.
 *
 
 # A Simple Futures Trend Following Strategy
